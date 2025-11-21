@@ -58,7 +58,7 @@ export default function AuthPage() {
     <main className="min-h-screen flex items-center justify-center bg-slate-100">
       <div className="w-full max-w-md bg-white rounded-2xl shadow p-6 space-y-4">
         <h1 className="text-2xl font-semibold text-center">
-          Eva – {mode === "signup" ? "Crea il tuo account" : "Entra"}
+          Heva – {mode === "signup" ? "Crea il tuo account" : "Entra"}
         </h1>
 
         <div className="flex justify-center gap-2">
