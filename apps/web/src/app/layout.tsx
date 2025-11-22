@@ -4,17 +4,17 @@ import Link from "next/link";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Eva – Herbalife Platform",
-  description: "Piattaforma Eva per clienti e distributori Herbalife",
+  title: "Heva – Herbalife Platform",
+  description: "Piattaforma Heva per clienti e distributori Herbalife",
 };
 
 const tabs = [
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/piano", label: "Piano" },
-  { href: "/moduli", label: "Moduli" },
-  { href: "/chat", label: "Chat" },
-  { href: "/profilo", label: "Profilo" },
+  { href: "/percorso", label: "Percorso" },
+  { href: "/operativita", label: "Operatività" },
+  { href: "/assistente", label: "Assistente AI" },
+  { href: "/menu", label: "Menu" }, // placeholder per funzioni extra/futuro
 ];
+
 
 export default function RootLayout({
   children,
@@ -23,12 +23,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="it">
-      <body className="min-h-screen bg-slate-50">
-        <div className="min-h-screen flex flex-col max-w-md mx-auto border-x bg-white">
-          <div className="flex-1 overflow-y-auto">{children}</div>
+      <body className="bg-slate-50 min-h-screen">
+        <div className="relative min-h-screen flex flex-col max-w-md mx-auto border-x bg-white">
+          {/* Contenuto principale scrollabile, con spazio in basso per la bottom bar */}
+          <main className="flex-1 pb-14 overflow-y-auto">{children}</main>
 
-          {/* Bottom bar mobile-style */}
-          <nav className="h-14 border-t flex items-center justify-between px-2 bg-white">
+          {/* Bottom bar fissa con le 5 tab */}
+          <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md h-14 border-t flex items-center justify-between px-2 bg-white z-10">
             {tabs.map((tab) => (
               <Link
                 key={tab.href}
